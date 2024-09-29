@@ -6,7 +6,7 @@ import { Address } from "@ton/core";
 import { send_transaction } from './services/transaction'; // send_transaction fonksiyonunu import et
 
 export default function Home() {
-  const [tonConnectUI] = useTonConnectUI();
+  const [tonConnectUI] = useTonConnectUI(); // useTonConnectUI burada, React bileşeni içinde
   const [tonWalletAddress, setTonWalletAddress] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -60,10 +60,10 @@ export default function Home() {
     return `${tempAddress.slice(0, 4)}...${tempAddress.slice(-4)}`;
   };
 
-  // Transaction fonksiyonunu tetikleyen butonun işlevi
+  // Transaction butonuna basıldığında tetiklenen fonksiyon
   const handleTransaction = async () => {
     try {
-      await send_transaction(); // Transaction fonksiyonu çağrılır
+      await send_transaction(tonConnectUI); // tonConnectUI'yi argüman olarak gönderiyoruz
       console.log("Transaction başarılı!");
     } catch (error) {
       console.error("Transaction hatası:", error);
@@ -95,7 +95,7 @@ export default function Home() {
 
           {/* Transaction Butonu */}
           <button
-            onClick={handleTransaction} // Butona basıldığında transaction fonksiyonu tetiklenir
+            onClick={handleTransaction}
             className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mt-4"
           >
             Transaction Başlat

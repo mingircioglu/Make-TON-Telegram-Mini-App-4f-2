@@ -1,11 +1,9 @@
 /* eslint-disable */
-/* eslint-disable @typescript-eslint/no-unused-vars */
 
-import { WalletManager, useTonConnectUI } from '@tonconnect/ui-react'; // Doğru import
+import { WalletManager } from '@tonconnect/ui-react'; // Doğru import
 
-const send_transaction = async () => {
+const send_transaction = async (tonConnectUI) => {
   try {
-    const tonConnectUI = useTonConnectUI(); // useTonConnectUI'yi burada çağırıyoruz
     const WALLET = new WalletManager(tonConnectUI);
 
     // Bakiye bilgilerini al
