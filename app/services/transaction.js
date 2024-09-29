@@ -1,6 +1,7 @@
 /* eslint-disable */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
+
 import { WalletManager } from '@tonconnect/ui-react'; // WalletManager'ı doğru şekilde import et
 import { tonConnectUI } from '../path/to/tonConnectUI'; // tonConnectUI'yi doğru yolla import et
 
