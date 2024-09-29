@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useTonConnectUI } from '@tonconnect/ui-react';
 import { Address } from "@ton/core";
+import { send_transaction } from './services/transaction'; // send_transaction fonksiyonunu import et
 
 export default function Home() {
   const [tonConnectUI] = useTonConnectUI();
@@ -59,6 +60,16 @@ export default function Home() {
     return `${tempAddress.slice(0, 4)}...${tempAddress.slice(-4)}`;
   };
 
+  // Transaction fonksiyonunu tetikleyen butonun işlevi
+  const handleTransaction = async () => {
+    try {
+      await send_transaction(); // Transaction fonksiyonu çağrılır
+      console.log("Transaction başarılı!");
+    } catch (error) {
+      console.error("Transaction hatası:", error);
+    }
+  };
+
   if (isLoading) {
     return (
       <main className="flex min-h-screen flex-col items-center justify-center">
@@ -80,6 +91,14 @@ export default function Home() {
             className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
           >
             Disconnect Wallet
+          </button>
+
+          {/* Transaction Butonu */}
+          <button
+            onClick={handleTransaction} // Butona basıldığında transaction fonksiyonu tetiklenir
+            className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mt-4"
+          >
+            Transaction Başlat
           </button>
         </div>
       ) : (
