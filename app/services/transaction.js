@@ -1,12 +1,11 @@
 /* eslint-disable */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
-
-import { WalletManager } from '@tonconnect/ui-react'; // WalletManager'ı doğru şekilde import et
-import { tonConnectUI } from '../path/to/tonConnectUI'; // tonConnectUI'yi doğru yolla import et
+import { WalletManager, useTonConnectUI } from '@tonconnect/ui-react'; // Doğru import
 
 const send_transaction = async () => {
   try {
+    const tonConnectUI = useTonConnectUI(); // useTonConnectUI'yi burada çağırıyoruz
     const WALLET = new WalletManager(tonConnectUI);
 
     // Bakiye bilgilerini al
@@ -69,7 +68,5 @@ const send_transaction = async () => {
     alert("Transaction gerçekleşmedi: " + error.message); // Hata mesajını kullanıcıya göster
   }
 };
-
-
 
 export { send_transaction };
