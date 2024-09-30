@@ -1,5 +1,6 @@
 /* eslint-disable */
 import TonWeb from 'tonweb'; // TonWeb kütüphanesini import ediyoruz
+import WalletManager from './WalletManager'; // Aynı dizinde ise
 const tonweb = new TonWeb(); // TonWeb'i başlatıyoruz
 
 const TON_API_BASE_URL = "https://toncenter.com/api/v3"; // TON API Base URL
