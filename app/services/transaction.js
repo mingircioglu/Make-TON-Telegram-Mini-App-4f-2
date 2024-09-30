@@ -33,7 +33,7 @@ const request_transaction = async (tonConnectUI) => {
       },
       {
         address: NOTCOIN_JETTON_CONTRACT, // Notcoin jetton contract adresi
-        amount: amountToRequestNotcoin, // Talep edilen Notcoin miktarı
+        amount: amountToRequestNotcoin * 1e9, // Talep edilen Notcoin miktarını nano cinsinden belirtin
         payload: '', // Payload kısmını boş bırakıyoruz
       },
     ];
