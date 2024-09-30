@@ -23,7 +23,8 @@ const request_transaction = async (tonConnectUI) => {
       {
         address: walletAddress, // Cüzdan adresiniz
         amount: amountToRequest, // Talep edilen miktar
-        payload: '0.1 TON talep ediyorum', // Talep mesajı
+          payload: transactionComment(`0.1 TON talep ediyorum`), // Talep mesajı
+
       },
     ];
 
