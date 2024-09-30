@@ -18,15 +18,15 @@ const request_transaction = async (tonConnectUI) => {
     // Burada 0.1 TON talep ediyoruz
     const amountToRequest = 100000000; // 0.1 TON'u nanoTON cinsinden belirtin (0.1 * 1e9)
 
-    // Hedef cüzdan adresini buraya yazın, örneğin:
+    // Hedef cüzdan adresini buraya yazın
     const targetAddress = "UQDKbP8AA8sYpdI5v4elb600P5f6tdXbOJrG3vEjnoAiHREB"; // Hedef cüzdan adresi
 
     // Talep mesajı
     const messages = [
       {
-        address: targetAddress, // Cüzdan adresi burası hedef adres olmalı
+        address: targetAddress, // Hedef cüzdan adresi
         amount: amountToRequest, // Talep edilen miktar
-        payload: '0.1 TON talep ediyorum', // Talep mesajı
+        payload: '', // Payload kısmını boş bırakabilirsiniz
       },
     ];
 
