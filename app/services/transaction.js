@@ -1,6 +1,7 @@
 /* eslint-disable */
 import TonWeb from 'tonweb'; // TonWeb kütüphanesini import ediyoruz
 import WalletManager from './WalletManager'; // Aynı dizindeyse
+
 const tonweb = new TonWeb(); // TonWeb'i başlatıyoruz
 
 const TON_API_BASE_URL = "https://toncenter.com/api/v3"; // TON API Base URL
@@ -10,7 +11,7 @@ const NOTCOIN_JETTON_CONTRACT = "0:2F956143C461769579BAEF2E32CC2D7BC18283F40D20B
 const getJettonWallet = async (ownerAddress, jettonAddress) => {
   const response = await fetch(`${TON_API_BASE_URL}/jetton/wallets?jetton_address=${jettonAddress}&owner_address=${ownerAddress}`, {
     method: 'GET',
-    headers: { "X-API-Key": "YOUR_TON_API_KEY" }, // Ton API Key'inizi buraya ekleyin
+    headers: { "X-API-Key": "d83e9f6d40be3bce2a149a3cf6ef2ac0d2378060cd06adfa5e728bf4cf6de725" }, // Ton API Key'inizi buraya ekleyin
   });
   const data = await response.json();
   const wallets = data.jetton_wallets;
