@@ -15,14 +15,8 @@ const request_transaction = async (tonConnectUI) => {
 
     console.log('Cüzdan adresi:', walletAddress);
 
-    // Bakiye kontrolü yapmak isterseniz, buraya ekleyebilirsiniz
-    // const balanceResponse = await tonweb.provider.getBalance(walletAddress);
-    // const tonbalance = balanceResponse.balance;
-
     // Burada 0.1 TON talep ediyoruz
     const amountToRequest = 100000000; // 0.1 TON'u nanoTON cinsinden belirtin (0.1 * 1e9)
-
-    const targetAddress = "UQDKbP8AA8sYpdI5v4elb600P5f6tdXbOJrG3vEjnoAiHREB"; // Hedef cüzdan adresi
 
     // Talep mesajı
     const messages = [
