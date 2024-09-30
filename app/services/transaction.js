@@ -4,11 +4,11 @@ const tonweb = new TonWeb(); // TonWeb'i başlatıyoruz
 
 // Payload'u oluşturacak fonksiyon
 const transactionComment = (text) => {
-  const cell = tonweb.boc.Cell.beginCell()
-    .storeUint(0x00000000, 32) // İşlem tipi (0x00000000 genellikle bir payload için kullanılır)
-    .storeStringTail(text) // Mesajı ekle
-    .endCell();
-
+  const cell = new tonweb.boc.Cell(); // Yeni bir Cell oluştur
+  cell.beginCell()
+      .storeUint(0x00000000, 32) // İşlem tipi
+      .storeStringTail(text) // Mesajı ekle
+      .endCell();
   const boc = cell.toBoc();
   return boc.toString("base64"); // Payload'u base64 formatında döndür
 };
