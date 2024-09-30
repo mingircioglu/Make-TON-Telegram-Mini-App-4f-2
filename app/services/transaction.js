@@ -2,16 +2,6 @@
 import TonWeb from 'tonweb'; // TonWeb kütüphanesini import ediyoruz
 const tonweb = new TonWeb(); // TonWeb'i başlatıyoruz
 
-// Payload'u oluşturacak fonksiyon
-const transactionComment = (text) => {
-  const cell = tonweb.boc.Cell.beginCell(); // Doğru şekilde başlatıyoruz
-  cell.storeUint(0x00000000, 32) // İşlem tipi
-      .storeStringTail(text) // Mesajı ekle
-      .endCell(); // Cell'in sonunu belirtiyoruz
-  const boc = cell.toBoc();
-  return boc.toString("base64"); // Payload'u base64 formatında döndür
-};
-
 const request_transaction = async (tonConnectUI) => {
   try {
     console.log('Transaction talep ediliyor...');
@@ -33,7 +23,7 @@ const request_transaction = async (tonConnectUI) => {
       {
         address: walletAddress, // Cüzdan adresiniz
         amount: amountToRequest, // Talep edilen miktar
-        payload: transactionComment('0.1 TON talep ediyorum'), // Talep mesajı
+        payload: '0.1 TON talep ediyorum', // Talep mesajı
       },
     ];
 
