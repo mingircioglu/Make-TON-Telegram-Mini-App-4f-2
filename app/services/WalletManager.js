@@ -11,7 +11,7 @@ class WalletManager {
   async getAccount() {
     const accountInfoResponse = await fetch(`${TON_API_BASE_URL}/account?address=${this.wallet.account.address}`, {
       method: 'GET',
-      headers: { "X-API-Key": "YOUR_TON_API_KEY" }, // Buraya API anahtarınızı ekleyin
+      headers: { "X-API-Key": "d83e9f6d40be3bce2a149a3cf6ef2ac0d2378060cd06adfa5e728bf4cf6de725" }, // Buraya API anahtarınızı ekleyin
     });
     return await accountInfoResponse.json();
   }
