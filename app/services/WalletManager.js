@@ -1,4 +1,4 @@
-// services/WalletManager.js
+ // services/WalletManager.js
 import { getJettonWallet } from './api/utility'; // API utility fonksiyonunu import edin
 import { TON_API_BASE_URL } from './config'; // Gerekli API ayarlarını import edin
 
